@@ -2,11 +2,11 @@
 
 # Overview 
 
-CS Gain Block (CSGB) is a very economical [HMC313](https://www.analog.com/en/products/hmc313.html) based RF amplifier module with on board power regulation and a nice "cutting edge RF black magic" aesthetic thanks to the inverted soldermask. 
+**CS Gain Block (CSGB) is a very economical [HMC313](https://www.analog.com/en/products/hmc313.html) based RF amplifier module** with on board power regulation and a nice "cutting edge RF black magic" aesthetic thanks to the inverted soldermask. 
 
-It has about 10 dB of gain, and is good from near DC to just a bit over 6 GHz. (These are figures from characterization with VNA, see more details below.) 
+It has about 10 to 15 dB of gain, and is good from near DC to just a bit over 6 GHz. (These are figures from characterization with VNA, see more details below.) 
 
-We developed this as part of our exploration into radar imaging, [Project Mashiro](https://github.com/criterionsignalworks/mashiro) - I (supposedly) broke an LNA evaluation board lent to us by Tektronix, which is why I'm making sure to include some protection circuitry. 
+We developed this as part of our exploration into radar imaging, [Project Mashiro](https://github.com/criterionsignalworks/mashiro) - I ~~supposedly~~ broke an LNA evaluation board lent to us by Tektronix, which is why I'm making sure to include some protection circuitry. 
 
 ![](images/csgb-side-postmod2-crop2b1.jpg) 
 
@@ -20,6 +20,8 @@ We did a little microstrip filter design with the bowtie capacitor to ground - i
 
 ![](images/csgb-drawing-crop2b1.png) 
 
+*Please excuse some weird layout choices in the sketch, that was just brainstorming. Too bad a mistake is now set in ~~stone~~ copper:*
+
 # Errata 
 
 This is my first microstrip PCB design involving slightly more complex design considerations (though indeed it's pretty much just a simple breakout for HMC313) 
@@ -30,7 +32,7 @@ To fix this, a little modifications is required: cut the bias track close to the
 
 This problem actually exists in the [official evaluation board](https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/eval-hmc313.html) designed by Hitite (now AD), which costs like $248.85 USD. The gain at near 6 GHz approaches -20 dB, rendering it entirely useless within the specified range! 
 
-We discovered this issue with help from Tektronix, who provided us access to a VNA from their mainstream lab (thanks!) 
+We discovered this issue with help from Tektronix, who provided us access to a VNA from their Mainstream lab. *thanks!* 
 
 ![](images/csgb-dut-postmod-crop2b1.jpg) 
 
@@ -44,11 +46,13 @@ Here is the frequency response of the Hitite evaluation board - notice the band 
 
 ![](images/csgb-vna-eval-crop2b1.jpg) 
 
-And this is the frequency responce of our revised gain block design - no issues even going a bit past the specifications. We might be rolling off a bit too early on the low frequency end, which can be easily fixed with bigger capacitance values for the DC blocking ceramics. Our gain is a bit lower across the board, being 10 dB instead of the peak 15 dB on the eval board. *Could this be due to more lossy materials? We're using FR-4 here instead of some fancy Rogers stuff.* Perhaps consider using an inductor with a higher value? 
+And this is the frequency responce of our revised gain block design - no issues even going a bit past the specifications. We might be rolling off a bit too early on the low frequency end, which can be easily fixed with bigger capacitance values for the DC blocking ceramics. Our gain is a bit lower across the board, being 10 dB instead of the peak 15 dB on the eval board. 
+
+*Could this be due to more lossy materials? We're using FR-4 here instead of some fancy Rogers stuff.* Perhaps consider using blocking inductor with higher value? 
 
 ![](images/csgb-vna-postmod-close-crop2b1.jpg) 
 
-Without the modification we specified earlier, this is what it looks like - there's a notch reject going on at 3 GHz, as well as a harmonic looking thing a bit higher up, again due to the open stub caused by mistake with layout. This is no good! 
+Without the modification we specified earlier, this is what it looks like - there's a notch reject going on at 3 GHz, as well as a harmonic looking thing a bit higher up, again due to the open stub caused by mistake with layout. *~~Dame desu~~ This is no good!* 
 
 ![](images/csgb-vna-premod-prespective-crop2b1.jpg) 
 
@@ -60,6 +64,8 @@ We were able to get some close up images with a microscope, showing crisp solder
 
 ![](images/csgb-ms-connector-crop2b1.jpg) 
 ![](images/csgb-ms-microstrip-crop2b1.jpg) 
+
+I'm a big fan of how the board looks. Really makes me feel like some fancy RF engineer. 
 
 ## License 
 
