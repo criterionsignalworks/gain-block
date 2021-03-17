@@ -44,7 +44,7 @@ Here is the frequency response of the Hitite evaluation board - notice the band 
 
 ![](images/csgb-vna-eval-crop2b1.jpg) 
 
-And this is the frequency responce of our revised gain block design - no issues even going a bit past the specifications. We might be rolling off a bit too early on the low frequency end, which can be easily fixed with bigger capacitance values for the DC blocking ceramics. Our gain is a bit lower across the board, being 10 dB instead of the peak 15 dB on the eval board. *Could this be due to more lossy materials? We're using FR-4 here instead of some fancy Rogers stuff.* 
+And this is the frequency responce of our revised gain block design - no issues even going a bit past the specifications. We might be rolling off a bit too early on the low frequency end, which can be easily fixed with bigger capacitance values for the DC blocking ceramics. Our gain is a bit lower across the board, being 10 dB instead of the peak 15 dB on the eval board. *Could this be due to more lossy materials? We're using FR-4 here instead of some fancy Rogers stuff.* Perhaps consider using an inductor with a higher value? 
 
 ![](images/csgb-vna-postmod-close-crop2b1.jpg) 
 
