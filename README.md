@@ -8,7 +8,7 @@ It has about 10 dB of gain, and is good from near DC to 6 or 7 GHz. (These are f
 
 We developed this as part of our exploration into radar imaging, [Project Mashiro](https://github.com/criterionsignalworks/mashiro).
 
-![](csgb-side-postmod2-crop2b1.jpg)
+![](images/csgb-side-postmod2-crop2b1.jpg)
 # Realization 
 
 The circuit board is designed using Altium. As I'm too lazy to find a clever way to get this inverted soldermask effect, so I used manually placed polygons and regions. Tedious, yes, but it seems to work. 
@@ -17,12 +17,12 @@ For the on board voltage regulation circutiry, we reused the LDO design with fer
 
 We did a little microstrip filter design with the bowtie capacitor to ground - it mainly just look pretty, it doesn't seem to contribute too much to the performance of the device. 
 
-![](csgb-drawing-crop2b1.png)
+![](images/csgb-drawing-crop2b1.png)
 # Errata
 
 
 
-![](csgb-tekmod-reverse-crop2b1.jpg)
+![](images/csgb-tekmod-reverse-crop2b1.jpg)
 ## License
 This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License][cc-by-nc-sa].
 
