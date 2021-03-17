@@ -48,7 +48,7 @@ And this is the frequency responce of our revised gain block design - no issues 
 
 ![](images/csgb-vna-postmod-close-crop2b1.jpg)
 
-Without the modification we specified earlier, this is what it looks like - notice the notch reject behavior at 3 GHz, as well as a harmonic looking thing a bit higher up. This is no good! 
+Without the modification we specified earlier, this is what it looks like - there's a notch reject going on at 3 GHz, as well as a harmonic looking thing a bit higher up, again due to the open stub caused by mistake with layout. This is no good! 
 
 ![](images/csgb-vna-premod-prespective-crop2b1.jpg)
 
