@@ -24,7 +24,7 @@ We did a little microstrip filter design with the bowtie capacitor to ground - i
 
 This is my first microstrip PCB design involving slightly more complex design considerations (though indeed it's pretty much just a simple breakout for HMC313)
 
-I made a mistake with the placement of the bias tee - the RF blocking inductor should ideally be right on the transmission line. Instead, I cleverly placed a long track that acts as an open stub at the frequencies we're dealing with. This acted as a band reject filter, centering somewhere about 3 GHz. 
+I made a mistake with the placement of the bias tee - the RF blocking inductor should ideally be right on the transmission line. Instead, I cleverly placed a long track that acts as an open stub at the frequencies we're dealing with. This acted as a band reject filter, centering somewhere around 3 GHz. 
 
 To fix this, a little bodge is required: cut the bias track close to the transmission line, put an inductor across there with an accompanying capacitor to ground. The exact values don't seem to matter too much, same 1 nH inductors and something like 1 nF should work. Keep the quality factor of the components in mind. 
 
@@ -38,7 +38,19 @@ We discovered this issue with help from Tektronix, who provided us access to a V
 
 Again thanks to kind folks at Tektronix, we were able characterize our design with the VNA. Our (revised) design performs better than the Hitite/AD reference board. 
 
+The image above shows our testing setup - we have a bench power supply and semi-calibrated low loss VNA cables connected to the SMA connectors. Standard stuff. 
 
+Here is the frequency response of the Hitite evaluation board - notice the band reject effect at 6.5 GHz and gain below 10 dB at the 4.5 GHz mark. This is not supposed to happen! 
+
+![](images/csgb-vna-eval-crop2b1.jpg)
+
+And this is the frequency responce of our revised gain block design - no issues even going a bit past the specifications. We might be rolling off a bit too early on the low frequency end, which can be easily fixed with bigger capacitance values for the DC blocking ceramics. Our gain is a bit lower across the board, being 10 dB instead of the peak 15 dB on the eval board. Could this be due to more lossy materials? We're using FR-4 here instead of some fancy Rogers stuff.
+
+![](images/csgb-vna-postmod-close-crop2b1.jpg)
+
+Without the modification we specified earlier, this is what it looks like - notice the notch reject behavior at 3 GHz, as well as a harmonic looking thing a bit higher up. This is no good! 
+
+![](images/csgb-vna-premod-prespective-crop2b1.jpg)
 
 ## JLCPCB 
 
