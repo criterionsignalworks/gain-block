@@ -18,7 +18,7 @@ For the on board voltage regulation circutiry, we reused the LDO design with fer
 
 We did a little microstrip filter design with the bowtie capacitor to ground - it mainly just look pretty, it doesn't seem to contribute too much to the performance of the device. 
 
-![](images/csgb-drawing-crop2b1.png) 
+[//]: # ( ![](images/csgb-drawing-crop2b1.png) )
 
 *Please excuse some weird layout choices in the sketch, that was just brainstorming. Too bad a mistake is now set in ~~stone~~ copper:*
 
