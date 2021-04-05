@@ -59,7 +59,7 @@ Without the modification we specified earlier, this is what it looks like - ther
 
 ## JLCPCB 
 
-JLCPCB were able to help us fabricate these boards. We've worked with them for all of our projects so far and their flexibility and performance really helps realizing compact and high performing designs! 
+[JLCPCB](https://jlcpcb.com/RAT) were able to help us fabricate these boards. We've worked with them for all of our projects so far and their flexibility and performance really helps realizing compact and high performing designs! 
 
 We were able to get some close up images with a microscope, showing crisp soldermask and copper deposition: 
 
